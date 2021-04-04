@@ -1,38 +1,49 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Recipie {
+  border: 3px solid #c1cfd8;
+  border-radius: 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  width: 360px;
+  margin: 12px;
+  height: 500px;
+  transition: 0.3s all;
+}
+.Recipie:hover {
+  border: 3px solid #ffffff;
+  box-shadow: -1px 20px 38px -10px rgba(0, 0, 0, 0.31);
+  -webkit-box-shadow: -1px 20px 38px -10px rgba(0, 0, 0, 0.31);
+  -moz-box-shadow: -1px 20px 38px -10px rgba(0, 0, 0, 0.31);
+}
+.content {
+  padding: 0 16px;
+}
+.Recipie img {
+  border-radius: 24px 24px 0 0;
+  margin-bottom: 8px;
+  object-fit: cover;
+}
+.Recipie .calories {
+  color: black;
+  background-color: #ffffa4;
+  padding: 8px;
+  border-radius: 24px;
+  margin: 8px 0;
+}
+.description {
+  color: #808580;
+  font-size: 14px;
+}
+
+.allRecipies {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
 }
