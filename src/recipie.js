@@ -1,17 +1,21 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-function Recipie({title,calories,image}){
-
-    return(
-        <div className="Recipie">
-            <img src={image} alt="" width="354px" height="250px" loading="lazy"/>
-            <div className="content">
-            <h2>{title}</h2>
-            <p className="calories">🔥 {calories}</p>
-            <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus nesciunt incidunt eos rerum, quisquam distinctio exercitationem eveniet accusantium molestiae accusamus</p>
-            </div>
-        </div>
-    );
+function Recipie({ title, calories, image, ingredients }) {
+  return (
+    <div className="Recipie">
+      <p className="calories">🔥 {calories}</p>
+      <img src={image} alt="" width="354px" height="250px" loading="lazy" />
+      <div className="content">
+        <h2>{title}</h2>
+        <h4>Ingredients</h4>
+        <ol className="ingredientList">
+          {ingredients.map((ingredient) => {
+            return <li className="ingredient">{ingredient}</li>;
+          })}
+        </ol>
+      </div>
+    </div>
+  );
 }
 export default Recipie;

@@ -1,8 +1,10 @@
-.App {
+.App,
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 8px;
 }
 .Recipie {
   border: 3px solid #c1cfd8;
@@ -13,6 +15,7 @@
   width: 360px;
   margin: 12px;
   height: 500px;
+  position: relative;
   transition: 0.3s all;
 }
 .Recipie:hover {
@@ -23,22 +26,54 @@
 }
 .content {
   padding: 0 16px;
+  overflow-y: scroll;
 }
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.content {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.content h2 {
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.content h3 {
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
 .Recipie img {
   border-radius: 24px 24px 0 0;
   margin-bottom: 8px;
   object-fit: cover;
 }
-.Recipie .calories {
-  color: black;
-  background-color: #ffffa4;
-  padding: 8px;
-  border-radius: 24px;
-  margin: 8px 0;
+.calories {
+  color: white;
+  font-weight: 700;
+  padding: 4px;
+  font-size: 16px;
+  background: rgba(204, 204, 204, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: absolute;
+  top: 200px;
+  left: 16px;
 }
-.description {
-  color: #808580;
-  font-size: 14px;
+.ingredient {
+  color: #4d4d4d;
+  font-size: 16px;
+  line-height: 150%;
+}
+.ingredientList {
+  margin: 8px 16px;
 }
 
 .allRecipies {
@@ -46,4 +81,55 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+/*  */
+/*  */
+/*  */
+
+.search-form {
+  max-width: 500px;
+  outline: none;
+  border: none;
+  height: 48px;
+  padding: 16px;
+  margin: 36px;
+  display: flex;
+  background: rgb(244, 248, 255);
+  box-shadow: rgba(136, 172, 243, 0.25) 0px 10px 30px,
+    rgba(0, 0, 0, 0.03) 0px 1px 1px, rgba(0, 51, 167, 0.1) 0px 10px 20px,
+    rgba(76, 102, 148, 0.13) 0px 1px 3px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  -webkit-box-align: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.search-bar {
+  width: 90%;
+  height: 160%;
+  border: none;
+  outline: none;
+  background: inherit;
+  font-size: 22px;
+}
+.search-button {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  color: black;
+  outline: none;
+  cursor: pointer;
+}
+
+code {
+  font-size: 12px;
+  color: grey;
+}
+
+input::placeholder {
+  font-size: 16px;
+  color: rgb(158, 158, 158);
+  padding-left: 8px;
 }
